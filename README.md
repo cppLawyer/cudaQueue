@@ -26,7 +26,7 @@ __device__ inline void fillQueue() {
 	print(var);
 }
 
-__global__ void value() {
+__global__ void do_something() {
 	fillQueue();
 }
 
@@ -34,7 +34,7 @@ __global__ void value() {
 
 int main()
 {
-	value <<< 1, 1 >>> ();
+	do_something <<< 1, 1 >>> ();
 	cudaDeviceSynchronize();
 	cudaDeviceReset();
 }
