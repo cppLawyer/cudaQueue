@@ -7,6 +7,8 @@
 #else
 #define CUDA_CALLABLE_MEMBER
 #endif
+namespace cudacpp{
+	
 template <typename T>
 class cudaQueue {
 private:
@@ -77,4 +79,6 @@ public:
 	CUDA_CALLABLE_MEMBER ~cudaQueue() {
 		delete[] main_Mem;
 	}
+};
+	
 };
