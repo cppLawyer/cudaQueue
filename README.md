@@ -10,7 +10,7 @@ EXAMPLE:
 ```
 
 template <typename T>
-__device__ inline void print(cudaQueue<T>& value) {
+__device__ inline void print(cudacpp::cudaQueue<T>& value) {
 	int size = value.size();
 	for (int var = 0; var < size; ++var) {
 		printf("%i\n", value.front());
@@ -19,7 +19,7 @@ __device__ inline void print(cudaQueue<T>& value) {
 }
 
 __device__ inline void fillQueue() {
-	cudaQueue<int> var;
+	cudacpp::cudaQueue<int> var;
 	for (int i = 0; i < 15; ++i) {
 		var.push(i * 14 + 1);
 	}
